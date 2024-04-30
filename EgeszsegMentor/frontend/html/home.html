@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EgeszsegMentor</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <script src="bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="/frontend/html/bootstrap.css">
+    <link rel="stylesheet" href="/frontend/html/stilus.css">
+    <style>
+        body {
+            background-image: url('/images/dark.jpg');
+            background-size: cover;
+            background-repeat: repeat;
+            background-position: center;
+        }
+
+       
+    </style>
+</head>
+
+
+<body id="page-top">
+
+    <!-- Navigációs panel -->
+    <nav class="navbar navbar-expand-lg bg-dark text-uppercase fixed-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand js-scroll-trigger sajat" href="#page-top">Kezdőlap</a>
+            <button
+                class="navbar-toggler navbar-toggler-right text-uppercase font-weight-bold bg-primary text-white rounded"
+                type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive"
+                aria-expanded="false" aria-label="Toggle navigation">
+
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+
+                <ul class="navbar-nav ml">
+                    <li class="nav-item"><a class="nav-link rounded js-scroll-trigger" href="#blog">Blog</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link rounded js-scroll-trigger" href="#recept">Receptek</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link rounded js-scroll-trigger"
+                            href="#kaloriabazis">Kalóriabázis</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link rounded js-scroll-trigger"
+                            href="#kalkulator">Kalkulátorok</a>
+                    </li>
+                    <li class="nav-item "><a class="nav-link rounded js-scroll-trigger" href="#baba">
+                            <nobr>Baba étrend</nobr>
+                        </a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link rounded js-scroll-trigger" href="#logout" onclick="logout()">
+                            Kijelentkezés</a>
+                    </li>
+
+                    <li class="btn btn-outline-light btn-social mx-2" href="#"><i class="fab fa-fw fa-facebook-f"></i>
+                    </li>
+                    <li class="btn btn-outline-light btn-social mx-2" href="#"><i class="fab fa-fw fa-twitter"></i>
+                    </li>
+                    <li class="btn btn-outline-light btn-social mx-2" href="#"><i
+                            class="fab fa-fw fa-linkedin-in"></i></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Fejléc -->
+    <header class="masthead bg-primary text-white text-center">
+        <div class="container d-flex align-items-center flex-column">
+            <h1 class="masthead-heading text-uppercase mb-3">Üdvözöllek az Egészség-Mentor<br> honlapján</h1>
+            <h2 class="masthead-subheading fa-bounce text-green mb-0">Jól eszel, jól leszel!</h2>
+        </div>
+    </header>
+
+
+
+    <!-- SlideShow -->
+    <section class="page-section bg-primary text-black mb-0">
+        <div class="slideshow-container">
+
+            <div class="mySlides">
+                <div class="numbertext">1 / 3</div>
+                <img src="/images/slideshow3.jpg"
+                    style="border:10px outset rgba(27, 20, 20, 0.562); max-width:100%;max-height:100%" />
+
+            </div>
+
+            <div class="mySlides">
+                <div class="numbertext">2 / 3</div>
+                <img src="/images/slideshow4.jpg"
+                    style="border:10px outset rgba(27, 20, 20, 0.562); max-width:100%;max-height:100%">
+
+            </div>
+
+            <div class="mySlides">
+                <div class="numbertext">3 / 3</div>
+                <img src="/images/slideshow5.png"
+                    style="border:10px outset rgba(27, 20, 20, 0.562); max-width:100%;max-height:100%">
+
+            </div>
+
+            <a class="prev" onclick="plusSlides(-1)">❮</a>
+            <a class="next" onclick="plusSlides(1)">❯</a>
+
+        </div>
+        <br>
+
+        <div style="text-align:center">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+        </div>
+    </section>
+<!-- Blog -->
+    <section class="page-section bg-dark text-white mb-0" id="blog">
+        <div class="container">
+
+
+            <div class="container d-flex align-items-center flex-column">
+                <h1 class="masthead-heading text-uppercase mb-5">Blog</h1>
+                <video max-width: 100% height="auto" autoplay muted controls loop>
+                    <source src="/images/blog_vid.mp4" type="video/mp4">
+                </video>
+                <h2 class="masthead-subheading text-green mt-3 mb-3">Ide gyűjtöttük össze az egészséges táplálkozással
+                    kapcsolatos összes hasznos információt, videót, cikket</h2>
+
+                <a href="/frontend/html/blog.html" class="btn btn-light btn-lg " role="button"><i
+                        class="fas fa-angle-double-right fa-bounce"></i> </a>
+            </div>
+
+            <div class="row" id="blogok">
+
+            </div>
+
+        </div>
+    </section>
+
+    </section>
+    <!-- Receptek -->
+    <section class="page-section bg-primary text-white mb-0" id="recept">
+        <div class="container">
+
+
+            <div class="container d-flex align-items-center flex-column">
+                <h1 class="masthead-heading text-uppercase mb-5">Receptek</h1>
+                <video max-width: 100% height="auto" autoplay muted controls loop>
+                    <source src="/images/cooking.mp4" type="video/mp4">
+                </video>
+                <h2 class="masthead-subheading text-green mb-5 mb-3">Ide gyűjtöttük össze az egészséges táplálkozással
+                    kapcsolatos összes hasznos információt, videót, cikket</h2>
+                <a href="/frontend/html/receptek.html" class="btn btn-light btn-lg " role="button"><i
+                        class="fas fa-angle-double-right fa-bounce"></i> </a>
+            </div>
+
+
+            <div class="row" id="receptek">
+
+            </div>
+
+        </div>
+    </section>
+  <!-- Kaloriabazis -->
+    <section class="page-section bg-dark text-white mb-0" id="kaloriabazis">
+        <div class="container">
+
+
+            <div class="container d-flex align-items-center flex-column">
+                <h1 class="masthead-heading text-uppercase mb-5">Kalóriabázis</h1>
+                <video max-width: 100% height="auto" autoplay muted controls loop>
+                    <source src="/images/food.mp4" type="video/mp4">
+                </video>
+                <h2 class="masthead-subheading text-green mb-5 mb-3">Ide gyűjtöttük össze az egészséges táplálkozással
+                    kapcsolatos összes hasznos információt, videót, cikket</h2>
+                <a href="/frontend/html/kaloriabazis.html" class="btn btn-light btn-lg " role="button"><i
+                        class="fas fa-angle-double-right fa-bounce"></i> </a>
+            </div>
+
+
+            <div class="row" id="kaloriak">
+
+            </div>
+
+        </div>
+    </section>
+<!-- Kalkulator -->
+    <section class="page-section bg-primary text-white mb-0" id="kalkulator">
+        <div class="container">
+
+
+            <div class="container d-flex align-items-center flex-column">
+                <h1 class="masthead-heading text-uppercase mb-5">Kalkulátorok</h1>
+                <video max-width: 100% height="auto" autoplay muted controls loop>
+                    <source src="/images/kaloria_vid.mp4" type="video/mp4">
+                </video>
+                <h2 class="masthead-subheading text-green mt-5 mb-3">Ide gyűjtöttük össze az egészséges táplálkozással
+                    kapcsolatos összes hasznos információt, videót, cikket</h2>
+                <a href="/frontend/html/kalkulator.html" class="btn btn-light btn-lg " role="button"><i
+                        class="fas fa-angle-double-right fa-bounce"></i> </a>
+            </div>
+
+            <div class="row" id="kalkulator">
+
+            </div>
+
+        </div>
+    </section>
+<!-- Baba étrend -->
+
+    <section class="page-section bg-dark text-white mb-0" id="baba">
+        <div class="container">
+
+            <div class="container d-flex align-items-center flex-column">
+                <h1 class="masthead-heading text-uppercase mb-5">Baba étrend</h1>
+                <video max-width: 100% height="auto" autoplay muted controls loop>
+                    <source src="/images/baby_food.mp4" type="video/mp4">
+                </video>
+                <h2 class="masthead-subheading text-green mt-5 mb-3">Ide gyűjtöttük össze az egészséges táplálkozással
+                    kapcsolatos összes hasznos információt, videót, cikket</h2>
+                <a href="/frontend/html/baba.html" class="btn btn-light btn-lg " role="button"><i
+                        class="fas fa-angle-double-right fa-bounce"></i> </a>
+            </div>
+
+
+            <div class="row" id="babak">
+
+            </div>
+
+        </div>
+    </section>
+
+
+
+    <footer class="container-fluid text-center text-white">
+        <p>A weboldalt készítette: Montvai - 
+            Csontos Alexandra, 
+            Cserés Bence, 
+            Rákóczi Regina Réka</p>
+    </footer>
+
+   
+    <script src="/frontend/js/logout.js"></script>
+    
+    <script>
+        //Slideshow
+        let slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            let dots = document.getElementsByClassName("dot");
+            if (n > slides.length) { slideIndex = 1 }
+            if (n < 1) { slideIndex = slides.length }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+        }
+
+        //Slideshow
+    </script>
+</body>
+
+
+
+</html>

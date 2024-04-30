@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EgeszsegMentor</title>
+
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"> -->
+    <script src="bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="/frontend/html/bootstrap.css">
+    <link rel="stylesheet" href="/frontend/html/stilus.css">
+    <link rel="stylesheet" href="/register.css">
+    <style>
+        body {
+            background-image: url('/images/dark.jpg');
+            background-size: cover;
+        }
+
+    </style>
+</head>
+
+
+<body id="page-top">
+
+    <section class="page-section bg-dark text-white mb-0" id="login">
+        <div class="container">
+            <form id="loginForm">
+                <h1>Bejelentkezés</h1>
+                <div class="input-container">
+                    <i class="fa fa-enelope icon"></i>
+                    <input class="input-field" type="text" placeholder="E-mail" name="email">
+                </div>
+
+                <div class="input-container">
+                    <i class="fa fa-key icon"></i>
+                    <input class="input-field" type="password" placeholder="jelszó" name="psw">
+                </div>
+
+                <button type="submit" class="btn">Bejelentkezés</button>
+                <button type="button" class="btn" onclick="register()">Regisztráció</button>
+            </form>
+        </div>
+    </section>
+
+
+    <script src="login.js"></script>
+
+
+</body>
+
+
+
+</html>

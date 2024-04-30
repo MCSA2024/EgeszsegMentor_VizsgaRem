@@ -1,0 +1,939 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EgeszsegMentor</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <script src="bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="/frontend/html/bootstrap.css">
+    <link rel="stylesheet" href="/frontend/html/stilus.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        body {
+            background-image: url('/images/dark.jpg');
+            background-size: cover;
+            background-repeat: repeat;
+            background-position: center;
+            position: relative;
+        }
+
+
+        ul.nav-pills {
+            top: 20px;
+            position: fixed;
+        }
+
+        div.col-8 div {
+            height: 500px;
+        }
+
+        .modal-content {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            pointer-events: auto;
+            background-color: #bba98f;
+            background-clip: padding-box;
+            border: 0 solid rgba(0, 0, 0, 0.2);
+            border-radius: 0.75rem;
+            outline: 0;
+        }
+
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            margin-right: -1.5rem;
+            margin-left: -1.5rem;
+        }
+    </style>
+</head>
+
+<body id="page-top">
+
+    <!-- Navigációs panel -->
+    <nav class="navbar navbar-expand-lg bg-dark text-uppercase fixed-top" id="kaloriaNav">
+        <div class="container">
+            <a class="navbar-brand js-scroll-trigger sajat" href="#page-top">Baba étrend</a>
+            <a href="../html/home.html" class="btn btn-dark btn-lg " role="button"><i class="fas fa-home"></i> </a>
+            <ul class="navbar-nav ml">
+                <li class="nav-item"><a class="nav-link rounded js-scroll-trigger"
+                        href="#hozzataplalas">Hozzátáplálás</a>
+                </li>
+                <li class="nav-item"><a class="nav-link rounded js-scroll-trigger" href="#babarecept">Receptek
+                        babáknak</a>
+                </li>
+                <li class="nav-item"><a class="nav-link rounded js-scroll-trigger" href="#hasznosinfok">Hasznos
+                        információk</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+
+
+    <section class="page-section bg-dark text-white mb-0" id="hozzataplalas">
+        <div class="container">
+
+
+            <div class="container d-flex align-items-center flex-column">
+                <h1 class="masthead-heading text-uppercase mb-5">Hozzátáplálás</h1>
+                <img src="/images/Hozzataplalas-tablazat-2022.jpg" style="max-width: 100%" />
+                <br>
+                <br>
+                <p><b>A hozzátáplálási táblázatról érdemes még pár szót ejteni: <br></b>
+                    <br>
+                    <br>
+                    A hozzátáplálási táblázat az EMMI, a WHO és az ESPGHAN (Európai Gyermekgasztroenterológiai,
+                    Hepatológiai és Táplálkozástudományi Társaság) aktuális ajánlásai alapján készült. <br>
+                    A hozzátáplálási táblázatban vastag betűs alapanyagok potenciálisan allergizáló táplálékok, ezért
+                    egyszerre csak kis mennyiségben adhatók a babának. Ezekről és a további potenciálisan allergizáló
+                    táplálékokról a későbbiekben, a „Potenciálisan allergizáló táplálékok” részben részletesebben is
+                    lesz szó. <br>
+                    <br>
+                    A táblázatban a csillaggal jelölt (*) egzotikus gyümölcsök lehetőséget jelentenek, a hozzátáplálás
+                    ezek nélkül is megoldható és teljes értékű, ha a szülők, a család számára ezek nem beszerezhetők,
+                    vagy ha nem igénylik az ezekhez való hozzáférést. <br>
+
+                    <br>
+                    A cékla, a sárgarépa, a saláta, újburgonya viszonylag nagy mennyiségben tartalmazhat nitrátot, ami a
+                    babánál methemoglobinémiát, más néven kék csecsemő szindrómát okozhat. A nitráthalmozó zöldségekből
+                    vagy a nitrátos vízből származó nitrát ugyanis a belekben nitritté alakul át. A nitrit pedig a
+                    csecsemők vérében lévő - oxigén szállításért is felelős - hemoglobint igen könnyen át tudja
+                    alakítani methemoglobinná. Az így kialakuló oxigénhiány akár fulladást is okozhat a fiatal
+                    csecsemőknél, akiknél (6-8 hónapos korban) hiányzik az az enzim, ami ezt a transzformációt
+                    meggátolná. Emiatt egyrészt várj a korai adásukkal, másrészt amikor már adhatók, akkor egyszerre
+                    csak kis mennyiségben adj ilyen zöldségeket a babának és lehetőleg ellenőrzött, „bio” gazdálkodást
+                    folytató termelőtől szerezd be ezeket!<br>
+                    <br>
+                    A spenót és a sóska sok oxálsavat tartalmazhat. Az oxálsav vesecsatornában történő feldúsulása
+                    kalcium-oxalát képződéséhez vezet, amely a vesekövek egyik leggyakoribb alkotója. Legfeljebb heti
+                    egyszer adj a babának spenótot vagy sóskát! Az első főzőlé leöntésével valamelyest csökkentheted a
+                    sóska és a spenót oxálsav tartalmát.<br>
+                    A vízben való főzéshez képest a párolás vagy gőzben főzés jobban megőrzi az alapanyagok
+                    vitamintartalmát.<br>
+                    <br>
+                    A fulladásveszély elkerülése érdekében a könnyen félrenyelhető ételeket, mint például a szőlőszem, a
+                    koktélparadicsom vágd kisebbekre!<br>
+                    <br>
+                    A babának adott étel sose legyen túl meleg! Mielőtt odaadod neki, mindig ellenőrizd le a
+                    hőmérsékletét, nehogy megégesse a nyelvét!<br>
+                    <br>
+                    Bár a későbbiekben is lesz róla szó, de vannak ételek, amiket 12 hónapos korig semmiképpen se adj a
+                    babának. Ezek a nem ajánlott ételek: só, cukor, méz, fekete tea, zöld tea, kecsketej, egész olajos
+                    magvak, chips, csoki, cukorka.<br>
+                    <br>
+                    <b>És ne feledd: a babát evés közben soha ne hagyd felügyelet nélkül!</b></p>
+
+
+            </div>
+
+            <div class="row" id="hozzataplalas">
+
+            </div>
+
+        </div>
+    </section>
+
+
+    <section class="page-section bg-dark text-white mb-0" id="babarecept">
+        <div class="container">
+
+
+            <div class="container d-flex align-items-center flex-column">
+                <h1 class="masthead-heading text-uppercase mb-5">Receptek babáknak</h1>
+
+                
+
+                <div class="col-10">
+                    <img src="/images/paprikas_krumpli-recept.jpg"
+                        style="border:5px outset rgba(27, 20, 20, 0.562); max-width:20%;max-height:20%">
+                    <!-- Button to Open the Modal -->
+                    <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#recept1">
+
+                        Paprikás krumpli gyerekbarát módon elkészítve
+                    </button>
+
+                    <!-- The Modal -->
+                    <div class="modal fade" id="recept1">
+                        <div class="modal-dialog modal-xl">
+                            <div class="modal-content">
+
+                                <!-- Modal Header -->
+                                <div class="modal-header">
+                                    <h4 class="modal-title"><b>Recept leírása</b><br>
+                                        Hazánkban talán nem is létezik olyan ember, aki ne kóstolta volna már legalább
+                                        egyszer a paprikás krumplit, most egy olyan receptet hoztam nektek mely
+                                        gyermekbarát, így az apróságoknak sem kell nélkülöznie ezt az egyszerű és
+                                        nagyszerű ételt.</h4>
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                </div>
+
+                                <!-- Modal body -->
+                                <div class="modal-body">
+                                    <b>Hozzávalók</b><br>
+                                    1 evőkanál ManóMenü sütőolaj<br>
+                                    2 szál újhagyma a zöldjével együtt vagy 1 fej lilahagyma<br>
+                                    1 gerezd fokhagyma<br>
+                                    1 teáskanál pirospaprika<br>
+                                    1 evőkanál sűrített paradicsom<br>
+                                    fél dl paradicsompüré vagy paradicsomlé<br>
+                                    1 burgonya apró kockákra vágva<br>
+                                    1 babérlevél<br>
+                                    1 kiskanál só, bors ízlés szerint<br>
+                                    fél kiskanál majoranna vagy 1 kisebb ág ha friss<br>
+                                    3-4 burgonya nagyobb kockákra vágva ( ezt a végén tesszük hozzá)<br>
+                                    Elkészítés lépései<br>
+                                    1
+                                    A hagymákat az olajon megpároljuk, majd hozzáadjuk az apróra vágott burgonyát. Mikor
+                                    a burgonya is megpirult kissé, hozzáadjuk a paradicsomokat és a fűszereket.<br>
+                                    2
+                                    10 perc után villával vagy turmixgéppel pépesítsük kissé (a babérlevelet és a
+                                    majorannaszárat kivesszük előtte)<br>
+                                    3
+                                    Ekkor adjuk hozzá a nagyobb kockákra vágott burgonyákat. Ha szükséges adhatunk hozzá
+                                    vizet is ha szükségesnek látjuk.<br>
+                                    4
+                                    Mikor a nagyobb burgonyák is megpuhultak el is készültünk vele.<br>
+                                </div>
+
+                                <!-- Modal footer -->
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+                </div>
+
+
+                <div class="col-10">
+                    <img src="/images/csirkenuggets.jpg"
+                        style="border:5px outset rgba(27, 20, 20, 0.562); max-width:20%;max-height:20%">
+                    <!-- Button to Open the Modal -->
+                    <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#recept2">
+
+                        Csirke nuggets gyerekeknek
+                    </button>
+
+                    <!-- The Modal -->
+                    <div class="modal fade" id="recept2">
+                        <div class="modal-dialog modal-xl">
+                            <div class="modal-content">
+
+                                <!-- Modal Header -->
+                                <div class="modal-header">
+                                    <h4 class="modal-title"><b>Recept leírása</b><br>
+                                        Készíts otthon nuggetset! Így biztos lehetsz benne, hogy friss és minőségi
+                                        alapanyagokból készült, elkerülheted az adalékanyagokat, tartósítószereket és a
+                                        túl sok sót, amelyekkel a bolti változatban gyakran találkozhatsz. Otthon
+                                        készítve könnyen alkalmazkodhatsz a gyermeked ízléséhez (esetleg kedvenc
+                                        formájához) ezáltal egészségesebb, finomabb és személyre szabottabb fogásokat
+                                        készíthetsz számára.</h4>
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                </div>
+
+                                <!-- Modal body -->
+                                <div class="modal-body">
+                                    <b>Hozzávalók</b><br>
+                                    1 kg darált csirke vagy pulykahús<br>
+                                    3 tojás<br>
+                                    zsemlemorzsa<br>
+                                    Ízlés szerint fokhagymapor, só, bors<br>
+                                    Elkészítés lépései<br>
+                                    1
+                                    Helyezzük sütőpapírt egy akkora méretű tepsire, ami elfér a fagyasztóban.<br>
+                                    2
+                                    A darált húst ízlés szerint fűszerezzük meg sóval, borssal és fokhagymaporral.
+                                    Gyúrjuk össze a masszát.<br>
+                                    3
+                                    Az összegyúrt masszából lapogassunk a sütőpapírra 1,5 cm vastagságban annyit,
+                                    amennyi elfér rajta.<br>
+                                    4
+                                    Tegyük a tepsit a fagyasztóba ~30 percre, hogy a hús kissé megdermedjen.<br>
+                                    5
+                                    Vegyük ki, ha túl kemény picit várjunk, ha túl puha tegyük vissza a fagyasztóba.
+                                    Olyan állagúra kell 'fagyasztani', hogy szendvics, vagy sütikiszúróval mintát
+                                    tudjunk belőle kiszúrni.<br>
+                                    6
+                                    A kiszúrt mintákat/formákat tegyük egy másik tepsire és mehet be a fagyasztóba
+                                    ismét. A megmaradt illetve leeső részeket, gyúrjuk össze ismét és jöhet újra a
+                                    sütőpapírra lelapogatás 1,5 cm vastagon, a fagyasztás, formakiszúrás. A kiszúrt
+                                    formáknál fontos, hogy legalább 15 percig a fagyasztóban legyenek mielőtt jön a
+                                    panírozási folyamat.<br>
+                                    7
+                                    Verjük fel a tojást, illetve készítsük elő a zsemlemorzsát. A zsemlemorzsát is lehet
+                                    fűszerezni ízlés szerint sóval, borssal és fokhagymaporral.<br>
+                                    8
+                                    Ha kissé megfagytak a kiszúrt minták/formák, panírozzuk be őket. Először mártsuk a
+                                    tojásba, majd a zsemlemorzsába.<br>
+                                    10
+                                    Helyezzük sütőpapírral bélelt tepsire a kiszúrt mintákat, majd fújjuk le
+                                    olajjal.<br>
+                                    11
+                                    200 fokra előmelegített sütőben süssük 10 percig, majd fordítsuk meg, és süssük
+                                    további 6-8 percig, vagy amíg aranybarna nem lesz.<br>
+                                </div>
+
+
+                                <!-- Modal footer -->
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                    <div class="col-10">
+                        <img src="/images/edesburgonya_pure.jpg"
+                            style="border:5px outset rgba(27, 20, 20, 0.562); max-width:20%; max-height:20%">
+                        <!-- Button to Open the Modal -->
+                        <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#recept3">
+
+                            Karalábé és édesburgonya püré
+                        </button>
+
+                        <!-- The Modal -->
+                        <div class="modal fade" id="recept3">
+                            <div class="modal-dialog modal-xl">
+                                <div class="modal-content">
+
+                                    <!-- Modal Header -->
+                                    <div class="modal-header">
+                                        <h4 class="modal-title"><b>Recept leírása</b><br>
+                                            A karalábé és édesburgonya püré remek választás, kiváló ízeket és fontos
+                                            tápanyagokat kínál gyermekek számára.
+                                            A karalábé könnyű textúrája és enyhe íze ideális a hozzátáplálás kezdeti
+                                            szakaszában, míg az édesburgonya édes íze finom és vonzó lehet a kicsiknek.
+                                            Ezenkívül mindkét zöldség gazdag A-vitaminban, C-vitaminban és rostokban,
+                                            hozzájárulva a kisbaba egészséges fejlődéséhez.
+                                            A könnyen elkészíthető karalábé és édesburgonya püré egy olyan étel, amely
+                                            egyszerűen bevezethető a babaétrendbe, elősegítve a kiegyensúlyozott és
+                                            tápláló étkezést.
+                                            Készítsd el otthon könnyedén Te is.</h4>
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    </div>
+
+                                    <!-- Modal body -->
+                                    <div class="modal-body">
+                                        <b>Hozzávalók</b><br>
+                                        1 nagyobb édesburgonya<br>
+                                        1 karalábé<br>
+                                        2 gerezd fokhagyma<br>
+                                        1 dl tejszín<br>
+                                        1 kocka enerBIO leveskocka<br>
+                                        Elkészítés lépései<br>
+                                        1.
+                                        Felkockázzuk a zöldségeket, majd annyi vizet teszünk hozzá, hogy ellepje, majd
+                                        hozzáadjuk a leveskockát.<br>
+                                        2.
+                                        Miután megpuhult pürésítjük és hozzáadjuk a tejszínt.<br>
+                                    </div>
+
+
+                                    <!-- Modal footer -->
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-dismiss="modal">Close</button>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+
+                            </div>
+    
+                            <div class="col-10">
+                                <img src="/images/zoldsegesmuffin.jpg"
+                                    style="border:5px outset rgba(27, 20, 20, 0.562); max-width:20%; max-height:20%">
+                                <!-- Button to Open the Modal -->
+                                <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#recept4">
+        
+                                    Zöldséges zabmuffin
+                                </button>
+        
+                                <!-- The Modal -->
+                                <div class="modal fade" id="recept4">
+                                    <div class="modal-dialog modal-xl">
+                                        <div class="modal-content">
+        
+                                            <!-- Modal Header -->
+                                            <div class="modal-header">
+                                                <h4 class="modal-title"><b>Recept leírása</b><br>
+                                                    Az egyik legkedveltebb gabona hazánkban a ZAB, ami szuper, ugyanis: kiváló rostforrás, magas a béta-glükán tartalma, csökkenti a vér koleszterinszintjét. A zab hihetetlenül gazdag fitonutriensekben – olyan növényi vegyületekben, amelyek számos jótékony hatást fejtenek ki az emberi szervezetben, telítetlen zsírsavakban gazdag és a hozzátáplálás elejétől adható.
+                                                    Ha ezt a szuper alapanyagot még zöldségekkel is dúsítjuk, egy igazán tápláló és egészséges fogást tudunk a csemeténknek kínálni, ráadásul a kedvelt muffin formában  próbáljátok ki ezt a receptet Ti is!</h4>
+                                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                            </div>
+        
+                                            <!-- Modal body -->
+                                            <div class="modal-body">
+                                                Hozzávalók
+                                                <br>
+                                                30 g zabpehely<br>
+                                                kb 100 g zabliszt vagy sima liszt (illetve amennyit felvesz)<br>
+                                                250 ml zabtej<br>
+                                                1 db tojás<br>
+                                                40 g reszelt sárgarépa (levét leitatva)<br>
+                                                40 g reszelt cukkini (levét leitatva)<br>
+                                                2 evőkanál fagyasztott borsó (kiolvasztott) vagy friss borsó<br>
+                                                2 evőkanál fagyasztott kukorica (kiolvasztott) vagy friss kukorica<br>
+                                                1 tk sütőpor<br>
+                                                1 teáskanál fűszernövénykeverék<br>
+                                                bors, só (esetleg parmezán nagyobb gyerekeknél)<br>
+                                                <br>
+                                                Elkészítés lépései
+                                                <br>
+                                                1.
+                                                Olvaszd fel a fagyasztott borsót és a fagyasztott csemegekukoricát (pl hideg vízbe áztatva), majd a villa hátoldalával törd össze.<br>
+    
+                                                2.
+                                                Reszeld le a sárgarépát és a cukkinit, majd itasd le a levüket, például tedd bele konyhai papírtörlőbe a lereszelt zöldségeket, így a levük nélkül tudod felhasználni.<br>
+                                                3.
+                                                Keverd össze a száraz hozzávalókat – zab, zabliszt, sütőpor, fűszernövények és fekete bors.<br>
+                                                4.
+                                                Add hozzá a nedves összetevőket – a tojást és tejet.<br>
+                                                5.
+                                                Keverd hozzá a zöldségeket – a sárgarépát, cukkinit, borsót és csemegekukoricát.<br>
+                                                6.
+                                                Kanalazd bele a keveréket szilikon vagy papír muffin formába.<br>
+                                                7.
+                                                180 fokos sütőben körülbelül 20-25 percig célszerű sütni.<br>
+                                                8.
+                                                Hagyd kihűlni, majd tálalhatod a babádnak. Hűtőben 2-3 napig, fagyasztóban 2-3 hónapig eláll <br>
+                                            </div>
+        
+        
+                                            <!-- Modal footer -->
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary"
+                                                    data-dismiss="modal">Close</button>
+                                            </div>
+        
+                                        </div>
+                                    </div>
+                        <div class="row" id="babarecept">
+
+                        </div>
+                    
+                    </div>
+    </section>
+
+    <section class="page-section bg-dark text-white mb-0" id="hasznosinfok">
+        <div class="container">
+
+
+            <div class="container d-flex  flex-column">
+                <h1 class="masthead-heading text-uppercase mb-5">Hasznos információk</h1>
+                <b>Mi a hozzátáplálás?</b>
+                <br>
+                <br>
+                A hozzátáplálás minden kisbaba életében elérkezik. Ez az az időszak, amikor a baba az anyatejen vagy
+                a tápszeren kívül már mást is fogyaszthat. Megismerkedik új alapanyagokkal, élelmiszerekkel,
+                ételekkel, velük együtt új ízekkel, új állagokkal. Ahogy a neve is mutatja, a hozzátáplálás nem azt
+                jelenti, hogy ettől a pillanattól kezdve a baba már teljesen mást eszik. A baba hozzátáplálása során
+                az addig is fogyasztott anyatej és/vagy tápszer mellett kell bevezetni új táplálékokat a baba
+                étrendjébe. A szoptatás és/vagy a tápszeres táplálás ezt követően is folytatható, mivel kezdetben
+                még olyan keveset eszik a baba az anyatejen/tápszeren kívül, hogy az nem fedezné a napi energia- és
+                tápanyagszükségletét.
+                <br>
+                <br>
+                <b>A hozzátáplálás megkezdése</b><br>
+                <br>
+                A hozzátáplálás szót hallva az egyik legelső kérdés az lehet, hogy vajon mikor kell elkezdeni a
+                hozzátáplálást. Ahogy a baba fejlődik, úgy elérkezik az a pont, amikor már önmagában az anyatej
+                és/vagy tápszer nem fedezi a baba egészséges fizikai és szellemi fejlődéséhez szükséges energiát és
+                tápanyagokat. A baba a hozzátáplálás során jut hozzá ezekhez, míg végül az egyre több újonnan
+                bevezetett nyersanyag, élelmiszer, étel teljesen ki nem váltja az anyatejet/tápszert.
+                <br>
+                Bár többféle megközelítés létezik, de a nagy könyv szerint legkorábban a 4 hónapos kor után, tehát
+                az 5. hónapba lépve, legkésőbb pedig a 6 hónapos kor végén érdemes és szükséges elkezdeni a
+                hozzátáplálást. Miért nem hamarabb? Ennek több oka is van:
+                <br>
+                A baba emésztőrendszere általában 6 hónapos korban jut el arra a fejlettségi szintre, amikor már az
+                anyatejen és a tápszeren kívül más forrásból származó és más jellegű tápanyagot is képes
+                feldolgozni. Korábban esetleg előfordulhatnak emésztési zavarok, mint például székrekedés, hasmenés,
+                hasfájás.
+                <br>
+                Felnőttként nem is gondolnád, mennyi minden kell ahhoz, hogy a pici a darabos ételt is meg tudja
+                enni. A babának meg kell tanulnia, hogyan kell a szájában a nyelvét fel-le, jobbra-balra mozgatni.
+                Enélkül nem fogja tudni megfelelően mozgatni az ételt a szájában. Ahogyan azt is meg kell tanulnia,
+                hogy a pépesebb, majd később darabosabb ételeket hogyan tudja lenyelni.
+                <br>
+                A baba a megszületése után nagyon sok újdonsággal találkozik, ezeket fokozatosan megismeri,
+                hozzászokik. A darabos, szilárd étel a szájában is egy olyan dolog, ami neki újdonság, amihez idő
+                kell, hogy hozzászokjon. Éppen ezért ne lepődj meg, ha a kezdeti lépések nehezen mennek, ha először
+                elutasítja (például kiköpi) az új ételeket! Neked kell türelmesnek lenni, és akár 10-15 alkalommal
+                is próbálkozni egy-egy új étel bevezetésével. A hozzátáplálás előrehaladtával egyre jobban fejlődik
+                a baba rágókészsége, egyre ügyesebben rágja meg és nyeli le a falatokat.
+                <br>
+                Már egy 4 hónapos baba esetén is észrevehetsz olyan jeleket, amik arra utalnak, hogy hamarosan
+                készen áll a hozzátáplálásra. A 4 hónapos és a 6 hónapos kor között pedig már egyre több ilyenre
+                lehetsz figyelmes. Ha ezeket már észreveszed a babádnál, akkor már készen állhat a hozzátáplálásra:
+                <br>
+                <br>
+                <b>Stabilan meg tudja tartani a nyakát és a fejét.</b>
+                <br>
+                A stabil ülést is a jelek közé szokták sorolni, de valójában a stabil ülés a baba fejlődésében csak
+                jóval később jelentkezik. Elég ritka, hogy egy 4 hónapos baba önállóan és stabilan tudjon már ülni,
+                de még egy 6 hónapos babától sem lehet ezt elvárni. Éppen ezért inkább azt érdemes figyelni, hogy a
+                baba képes-e segítséggel stabilan ülni. Azaz vagy egy dönthető etetőszékben, vagy az öledben tudjon
+                megfelelően ülni. Túlságosan fekvő helyzetben ugyanis nagyobb a félrenyelés kockázata.
+                <br>
+                <br>
+                <b>Érdeklődik az ételek iránt.</b>
+                <br>
+                Ennek az egyik biztos jele, ha közösen ültök az asztalnál és odanyúl a
+                ti ételetekért és kitátja a száját, ha a kanállal közelítesz a szájához.
+                <br>
+                <br>
+                <b>A dolgokat képes egyik kezéből a másikba átvenni és megvan az a szem-kéz koordináció, ami ahhoz
+                    szükséges, hogy a szájához emeljen falatokat.</b>
+                <br>
+                <br>
+                <b>Hason fekve ki tudja magát nyomni, azaz képes nyújtott karral hason feküdni.</b>
+                <br>
+                Már 4 hónapos korban elkezdenéd a hozzátáplálást? Erről konzultálj a gyermekorvossal és a védőnővel!
+                Ha úgy látják, hogy a 4 hónapos baba már készen áll a hozzátáplálásra és a pusztán anyatejes vagy
+                tápszeres táplálás már nem elegendő a baba fejlődéséhez, akkor közösen a hozzátáplálás megkezdése
+                mellett dönthettek. Ilyen korán általában a kizárólag tápszeres táplálásban részesülő babáknál lehet
+                javasolt a hozzátáplálás megkezdése, az anyatejes és jól evő babáknál általában valóban érdemes
+                megvárni a hatodik hónapot.
+                <br>
+                A csecsemő hozzátáplálásában segítséget nyújthatnak a szakemberek által összeállított hozzátáplálás
+                táblázatok, amelyek útmutatóként szolgálhatnak, hogy tudd, hogy életkora szerint mit ehet a baba.
+                Fontos, hogy ezeket – bár nagy segítséget nyújthatnak a megannyi kérdéssel rendelkező szülők számára
+                – nem kell minden esetben szentírásként kezelni, mivel ezek a hozzátáplálás táblázatok alapelveket
+                és általános tanácsokat tartalmaznak, de a babák különbözhetnek. Ezért a sorrend időnként másképpen
+                alakulhat a baba egyéni igényei, szükségletei, vagy akár az évszak, szezon, sőt akár a lakhely miatt
+                is, mivel országonként eltérő lehet a javasolt hozzátáplálási sorrend. Mindig figyelj oda, hogy ki
+                és mikor állította össze a hozzátáplálási táblázatot, mivel a hozzátáplálási protokollok, alapelvek
+                gyorsan változnak, így könnyen belefuthatsz olyanba is, ami már elavult. Figyelj a baba egyéni
+                reakcióira, és aszerint is alakítsd a hozzátáplálási sorrendet!<br>
+                <br>
+                <br>
+                <b>A hozzátáplálás menete</b>
+                <br>
+                <br>A hozzátáplálás első hallásra kicsit idegenül hangozhat és sokan tartanak is tőle, de egyáltalán
+                nincs
+                ok az aggodalomra. A megfelelő szabályok betartásával a baba hozzátáplálása gond nélkül lezajlik.
+                Összeírtuk a legfontosabb dolgokat, amikkel érdemes még a hozzátáplálás megkezdése előtt tisztában
+                lenned.
+                <br>
+                <b>Fókuszban a fokozatosság</b><br>
+                <br>
+                A hozzátáplálás nem a 100 méteres síkfutás döntője. A csecsemő hozzátáplálása egy szépen lassan
+                előrehaladó folyamat, amit minden szempontból a fokozatosság és a rugalmasság, türelem jellemez. Az új
+                ízeket és az új állagokat egymás után, fokozatosan kell bevezetni. Semmit sem szabad elsietni.
+                <br>
+                Kezdetben csupán egyféle új alapanyaggal kínáld meg a babád! Az idő előrehaladtával egyre több mindennel
+                megismertetheted őt. Akár egymással keverve, egyszerre több mindent is lehet adni. Viszont először
+                mindent az alapoknál érdemes kezdeni: a gyümölcsöknél, zöldségeknél. Törekedj arra, hogy ne csak az édes
+                ízűeket ismerje meg (bár ezeket könnyebben elfogadja), hanem minél szélesebb ízvilággal találkozzon!
+                <br>
+                A hozzátáplálás elején a babádnak az új állaggal is meg kell ismerkednie, hiszen eddig csak a teljesen
+                folyékony anyatejjel vagy tápszerrel találkozott. Hogy ne legyen annyira drasztikus a váltás, ezért
+                érdemes először minél hígabb pürével megkínálni őt, és csak később adni neki darabosabb ételt.<br>
+
+
+                <br>
+                Azért is fontos a fokozatos bevezetés a baba hozzátáplálásánál, mert csak így derülhet ki, hogy van-e
+                olyan étel, amire allergiás vagy érzékeny. Két új alapanyag bevezetése között tarts kb. 4 nap szünetet!
+                Ha ennyi ideig csak ugyanazt eszi, akkor biztosabban tudhatod, hogy nem vált-e ki belőle allergiás
+                reakciót (például bőrkiütést).
+                <br>
+                Mivel sosem tudhatod, hogy okoz-e akár hasfájást, akár komolyabb problémát egy új alapanyag bevezetése,
+                ezért célszerű hétköznapokon a délelőtti órákra időzíteni az új étel kóstoltatását. Így ha gond adódik,
+                egyszerűbb orvoshoz fordulni.
+                <br>
+                <br>
+                <b>Állagok: a pürétől a falatokig</b>
+                <br>
+                A hozzátáplálás első szakaszában hígabb állagú püréket érdemes készíteni. A különféle zöldség, gyümölcs
+                alapú, például anyatejjel vagy tápszerrel hígított pépek kiváló megoldások erre az időszakra, mivel
+                olyan állagra keverhetők, amik átmenetet képeznek a teljesen híg anyatej és a sűrűbb pürék között. Amint
+                ezt a pürés állagot megszokta és elfogadta a pici - nagyjából 8 hónapos kor környékén - el lehet kezdeni
+                olyan ételeket adni neki, amelyekben már előfordulnak kisebb darabok, amik már nincsenek teljesen
+                pürésítve, turmixolva. Ezzel megkezdődik a rágásra szoktatás időszaka, ami nagyjából a baba 10 hónapos
+                koráig tart. A 10 hónapos babának már lehet adni még darabosabb püréket, puha darabokat tartalmazó
+                ételeket, amiket akár az ínyével is szét tud nyomni. Ilyenkor már érdemes megismertetni a kanállal, hogy
+                szép lassan elkezdje elsajátítani a kanálhasználat művészetét. Az önálló evés ideje körülbelül 1 éves
+                kortól érkezik meg. De ez sem verseny, ne aggódj, ha még ekkor sem megy tökéletesen.
+                <br>
+                A pürék hígítására használhatsz főzőlevet, forralt vizet, tápszert vagy akár anyatejet is. Ha tápszerrel
+                vagy anyatejjel szeretnéd hígítani a baba ételét, figyelj oda a megfelelő hőmérsékletre! Ha túl meleg
+                pürére öntöd rá a tápszert vagy az anyatejet, csökkenhet a vitamintartalom, ezért jó, ha 40 Celsius fok
+                alatti a hígítani kívánt püré hőmérséklete. Ehhez persze nem szükséges megmérni, hogy hány fokos a püré,
+                egyszerűen te magad is tudod ellenőrizni úgy, hogy meggyőződsz róla, hogy nem gőzölög, vagy óvatosan
+                megkóstolod.
+                <br>
+                <br>
+                <b>Potenciálisan allergizáló táplálékok</b>
+                <br>
+                Vannak potenciálisan allergizáló táplálékok, amelyeknél kiemelten fontos, hogy az első találkozásnál
+                figyeld a baba reakcióját. A korábbi ajánlásokkal ellentétben a legújabb ajánlások szerint a
+                potenciálisan allergizáló táplálékok bevezetésére is ugyanazok az ajánlások érvényesek, mint a többire,
+                azaz nem kell feltétlen megvárni, hogy a baba betöltse az 1 éves kort. A hozzátáplálás megkezdésével
+                ezek a potenciálisan allergizáló táplálékok is adhatók a csecsemőknek, de egyszerre csak kis
+                mennyiségben. Így hamarabb kiderül, hogy tényleg problémát okoznak-e.
+                <br>
+                Nincs bizonyíték arra, hogy a potenciálisan allergén táplálékok késői (12 hónapos kor feletti)
+                bevezetése megelőzi a táplálékallergiát, sőt ezzel szemben inkább arra van bizonyíték, hogy a túl késői
+                bevezetés növeli a táplálékallergia kialakulásának kockázatát.
+                <br>
+                A potenciálisan allergizáló táplálékok: földimogyoró, dió, mogyoró, mandula, makadámdió, kesudió,
+                fenyőmag, egyéb csonthéjasok, szezámmag, mustármag, málna, eper, natúr joghurt, kefir, túró, sajt,
+                tehéntej, vaj, sajtkrém, tejszín, tejföl, juhsajt, kecsketej, juhtúró, kakaó, tojás, hal, tenger
+                gyümölcsei (kagylók, rákok), szója, szójabab, szójatermék, búza (glutén), rozs, árpa, zeller, farkasbab.
+                <br>
+                Ha a szűk családban, vagyis a szülők, testvérek között előfordul valamilyen allergiás betegség, legyen
+                ez táplálékallergia vagy egyéb típusú allergia, mint például ekcéma, asztma vagy szénanátha, akkor a
+                hozzátáplálás megkezdése előtt mindenképpen konzultálj a gyermekorvossal és a védőnővel, hogy mit és
+                mikortól adsz a potenciálisan allergizáló táplálékok közül!
+                <br>
+                <br>
+                <b>A glutén bevezetése </b>
+                <br>
+                A hozzátápláláson belül a glutén bevezetésére a szülők általában nagy hangsúlyt szoktak fektetni, mivel
+                a glutén az egyik legismertebb, allergiás reakciót kiváltó táplálék-összetevő.
+                <br>
+                A glutén egy összetett fehérje (gliadin), ami egyes gabonafélékben található meg. Glutént tartalmaz a
+                búza, rozs, árpa. Szerencsére a többi gabona gluténmentes, mint például a kukorica, a köles és a rizs. A
+                zabot a gluténmentes gabonák közé soroljuk, viszont a termesztési és a feldolgozási fázisok során
+                gyakran előfordul, hogy gluténnal „szennyeződik”. Éppen ezért csak akkor számít gluténmentesnek, ha a
+                gyártó, forgalmazó a csomagoláson szereplő felirattal vállalja a garanciát arra, hogy az adott termék
+                valóban gluténmentes, s nem érintkezett gluténtartalmú gabonával a betakarítás, feldolgozás, csomagolás
+                során. Ha az a cél, hogy valóban gluténmentes zabbal kínáld a babát, keresd az áthúzott gabonakalász
+                logót és a gluténmentességet igazoló feliratokat a csomagoláson!
+                <br>
+
+
+                A jelenleg érvényben lévő ajánlások szerint a hozzátáplálás kezdetével egyidejűleg, tehát kb. 6-7
+                hónapos kortól elkezdhető a glutén bevezetése is, ami történjen meg a baba 12 hónapos koráig. Mivel a
+                glutén a fő táplálékallergének közé tartozik, ezért kezdetben mindenképpen kisebb mennyiségben adj
+                belőle a babádnak, és csak fokozatosan növeld a glutén mennyiségét! Lehetőleg még szoptass, amikor a
+                glutént először adod (vagy még kapjon mellette tápszert, ha szükséges), és a glutén bevezetését követően
+                a szoptatást még javasolt egy-három hónapig tovább folytatni.
+                <br>
+                A glutén bevezetésére vonzó alternatívát jelenthetnek a különböző gabonás pépek, de mivel ezek gyakran
+                cukrot is tartalmaznak az ellenőrzött forrásból származó liszt is megfelel erre a célra. Három gramm
+                búzaliszt 200 milligramm glutént tartalmaz. Ezt a 3 grammnyi (egy csapott mokkáskanálnyi) lisztet
+                dúsításként belekeverheted a babának szánt zöldség- vagy gyümölcspürébe. A glutént tartalmazó
+                babakekszek sok esetben szintén tartalmaznak cukrot is. A cukor adása pedig nem ajánlott a babáknak, így
+                hozzáadott cukrot nem tartalmazó babakekszet válassz, vagy süsd magad a kekszet, és akkor pontosan
+                tudod, mit tartalmaz.
+                <br>
+                <br>
+                <b>Étkezés kiváltása </b>
+                <br>
+                A hozzátáplálás kezdetén továbbra is az anyatej vagy a tápszer a legfőbb tápláléka a babának. A
+                hozzátáplálás során kínált étel kezdetben abszolút csak kiegészítő szerepet tölt be, nem vált ki egy
+                teljes étkezést. Nem is kell ezzel sietni. Ahogy haladtok előre a hozzátáplálásban, úgy fog a baba egyre
+                többet és többet elfogadni az új ételekből.
+                <br>
+                Amikor már egy alkalommal 100-150 grammnyi pürét is megeszik, az már azt jelenti, hogy kiváltható vele
+                egy étkezés. Ilyenkor már nem szükséges az anyatejes pótlás. Vannak babák, akik hamarabb és vannak, akik
+                később jutnak el erre a szintre. A hozzátáplálás gyorsasága miatt ne aggódj, idő kérdése és mindenki fel
+                fog zárkózni.
+                <br>
+                <br>
+                <i>Érdekesség: A hozzátáplálás menete anyatejes babánál eleve lassabb, mint a tápszeres babánál.</i>
+                <br>
+                Az étkezések kiváltását a tízóraival érdemes elkezdeni, aztán jöhet az ebéd. Nagyjából 8 hónapos korra
+                érdemes elérni azt a szintet, hogy két étkezés legyen teljesen kiváltva. A tízórai és az ebéd után az
+                uzsonna kiváltása következik. A reggeli és a vacsora kiváltását 1 éves kor előtt nem érdemes megejteni,
+                mivel a babának 1 éves koráig szüksége van napi 500 ml anyatejre, vagy ha az nincs, tápszerre. A
+                szoptatás folytatható 1 éves kor felett is (a szokásos napi étrenden túl), amíg ez mind a gyermek, mind
+                az anya számára kívánatos.
+                <br>
+                <br>
+                <b>Az anyatej szerepe</b>
+                <br>
+                A hozzátáplálás elkezdése nem azt jelenti, hogy fel kell hagyni a szoptatással. Sőt! Az anyatej továbbra
+                is kulcsfontosságú a baba fejlődéséhez. Csupán arról van szó, hogy 6 hónapos kortól kezdődően önmagában
+                az anyatej már nem nyújt elegendő mennyiségű és minőségű táplálékot.
+                <br>
+                A WHO az anyatejes szoptatás folytatását javasolja a kisgyermek 2 éves koráig, amennyiben ez az anyának
+                és a gyermeknek is ideális. Éppen ezért féléves kor után sem kell teljesen abbahagyni a szoptatást, de
+                az innentől már csak kiegészítő tápláléknak számít, és a testi-lelki kötelék fenntartását szolgálja.
+                <br>
+                A különböző ételek bevezetése mellett a szoptatás ugyanúgy fontos pillére marad a baba táplálásának. Bár
+                egy idő után megkezdődhet az étkezések kiváltása, de amíg ez nem történik meg, addig fontos, hogy a
+                pürék, darabos ételek mellett anyatejjel pótoljunk, ha a pici éhes maradt.
+                <br>
+                <br>
+                <b>Gondolj a folyadékfogyasztásra! </b>
+                <br>
+                <br>A hozzátáplálás kezdeti időszakában az anyatej még egy jó ideg továbbra is az első számú
+                tápanyagforrás.
+                Ez részben biztosítja is a szükséges folyadékmennyiséget. Viszont a hozzátáplálás előrehaladtával, a
+                szoptatások kiváltásával a folyadékfogyasztásra egyre nagyobb hangsúly kerül. Nem csak arra kell
+                figyelni, hogy rendszeresen igyon a baba, hanem arra is, hogy mit igyon.
+                <br>
+                <br>A legjobb folyadék a víz, mégpedig a tiszta víz. Ez lehet a boltokban kapható babavíz, de lehet akár
+                felforralt, majd lehűtött csapvíz is, amennyiben az otthoni vezetékes víz minősége megfelel erre a
+                célra. A csapvíz felforralása nem elégséges abban az esetben, ha a vezetékes víz ólommal szennyezett,
+                például a vízvezetékhálózatból eredő ólomszennyezés következtében. Elsősorban a régebbi építésű lakások,
+                házak esetében érdemes bevizsgáltatni a csapvíz minőségét, s amennyiben az ólomkockázat igazolható,
+                akkor át kell térni a palackozott vízre vagy pedig megfelelő, NNK (Nemzeti Népegészségügyi Központ)
+                tanúsítvánnyal rendelkező konyhai ivóvíz tisztító kisberendezés beszerelése válik szükségessé.
+                <br>
+                <br>A hagyományos ásványvizek nem alkalmasak a csecsemőknek. A gyártók a palackozott vizeken
+                egyértelműen
+                feltüntetik, hogy azok adhatók-e babáknak.
+                <br>
+                <br>A babavíz mellett alkalmanként kimondottan babáknak készített bébiitalokkal is kínálhatod a babádat.
+                Érdemes megnézni ezeknek az összetételét és olyat választani közülük, ami sem mesterséges színezéket,
+                sem hozzáadott cukrot, sem tartósítószert nem tartalmaz. A cukros gyümölcslevekkel óvatosan kell bánni,
+                még a 100%-os gyümölcstartalmú gyümölcslevekkel is, ugyanis a gyümölcs természetes cukortartalma miatt
+                ezekben nagyon sok a többletenergia, így túlságosan hizlalnak és szomjoltás szempontjából sem az
+                igaziak.
+                <br>
+                <br>
+                <b>Ételízesítés: só- és cukorhasználat</b>
+                <br>
+                <br>A babák ízérzékelése egészen más, mint a felnőtteké. Sokkal érzékenyebbek az ízekre, éppen ezért ami
+                neked sótlan, az neki nem feltétlen az. A hozzátáplálás során felejtsd el a sót és a cukrot! Ne a saját
+                ízlésed szerint készítsd el a baba ételét, hagyd meg az ételeket a természetes ízükben!
+                <br>
+                <br>A sóhasználat feleslegesen megterheli a baba veseműködését is. A túl sok cukor szintén negatívan
+                hathat
+                a baba szervezetére. Számos betegség nagyobb valószínűséggel alakul ki a túlzott cukorfogyasztás
+                következtében: magas vérnyomás, cukorbetegség, elhízás stb.
+                <br>
+                <br>A túlzott ételízesítés hatással lehet a baba felnőttkori ízérzékelésére. Ha már csecsemőkorban
+                hozzászokik a baba az intenzív és túl sós, túl édes ízekhez, akkor felnőttkorban magasabb lesz az a
+                szint, ahol egy ételt sósnak vagy édesnek érez. Ez persze további túlzott só- és cukorfogyasztáshoz
+                vezet.
+                <br>
+                <br>A baba 1 éves koráig a méz is kerülendő, mivel tartalmazhatja egy ún. Clostridium botulinum nevű
+                baktérium spóráit. Ezek a spórák a csecsemő szervezetébe jutva olyan méreganyagokat termelhetnek,
+                amelyek aztán akár végzetes bénuláshoz is vezethetnek.
+                <br>
+                <br>
+                <b> Változatos étrend</b>
+                <br>
+                <br>Az egészséges életmód egyik alapja a változatos táplálkozás. Ez a babák esetén is igaz. A
+                gyermekkori
+                változatos étkezés hatással van a felnőttkori étkezési szokásokra is. Ha már babaként sokféle
+                élelmiszerrel, étellel megismerteted őt, nagy eséllyel felnőttként is változatosan fog táplálkozni.
+                <br>
+                <br>A hozzátáplálás táblázat segít abban, hogy a baba életkorának megfelelően milyen élelmiszerekkel
+                tudod
+                őt megismertetni. Ha te nem is rajongsz például a brokkoliért vagy éppen a kelbimbóért, attól még a
+                babád lehet, hogy jóízűen fogja elfogyasztani. A baba etetése során törekedj arra, hogy ne a saját
+                ízlésed alapján kínáld meg ételekkel! Az ételek teljes kínálatával érdemes a babádat megismertetni,
+                úgyis kiderül mi az, amit szívesen fogyaszt, mi az, ami nem ízlik neki. Bár idővel ez is változhat, ne
+                csüggedj, ha valamit nem kedvel elsőre!
+                <br>
+                <br>
+                <b>Kitartás </b>
+                <br>
+                A hozzátáplálás nem mindig alakul álomszerűen, sok kitartásra és türelemre van szükség. A babák nem
+                fogadnak el mindent elsőre, de még másodjára, sőt harmadjára sem. Akár 10-15 alkalommal is kell
+                próbálkozni ugyanazzal az étellel, hátha elfogadja a pici. Nem kell erőszakosan tuszkolni a baba szájába
+                az új ételt. Felajánlod neki, megkóstolja, aztán vagy nem kér belőle, vagy szívesen megeszi. A lényeg a
+                kitartáson van, a kezdeti sikertelenség ne vegye el a kedvedet! A hozzátáplálás sikere gyakran a
+                rendszeres próbálkozásokon és a kitartáson dől el.
+                <br>
+                <br>
+                <b>Vaspótlás</b>
+                <br>
+                A babák természetes vastartaléka nagyjából 6 hónapos korukra kiürül, ezért nagyon fontos a vas megfelelő
+                pótlása. Ebben az időszakban már az anyatej sem tudja fedezni a pici szervezetének szükséges
+                vasmennyiséget, ezért azt más forrásból, a hozzátáplálás során kell pótolni.
+                <br>
+                <br>A baba etetése során figyelj arra, hogy vasban gazdag élelmiszerek, ételek is kerüljenek a tányérra!
+                Vannak olyan alapanyagok, amelyek nagyobb vastartalmúak. A zöldségek közül ilyen a borsó, a bab, a
+                csicseriborsó, a lencse, a spenót, a sóska; a húsok közül pedig elsősorban a vöröshúsok, a sertés-,
+                bárány- és a marhahús, valamint a máj. Azt azonban mindenképpen érdemes tudni, hogy a növényekből
+                származó vas közel sem hasznosul olyan jól, mint az állati eredetű vas, ezért egyedül a növények
+                vastartalma nem elegendő, inkább kiegészítő szerepe van. Erre példa a húsos feltét a főzelékeken. Mivel
+                a vas felszívódását a C-vitamin segíti, ezért a C-vitamin tartalmú ételek fogyasztása is ugyanolyan
+                fontos. C-vitaminban gazdag a legtöbb gyümölcs és zöldség, így például a különféle citrusfélék (citrom,
+                narancs), a kivi, vagy a paprika. Persze nem mindet javasolt túl korán adni.
+                <br>
+                <br>Miért fontos a vas? Mert a vasnak fontos szerepe van a baba fejlődésében, a kognitív képesség, mint
+                a
+                memória, a nyelvi készségek, a figyelem alakulásában. Valamint az oxigén szállítását végző hemoglobin
+                létrehozásáért is felel. A korai vashiány okozta idegrendszeri problémák, ami az elégtelen vagy például
+                a vegán táplálás eredménye lehet, sajnos nem hozhatók rendbe a későbbi vegyes, vasban gazdag étrenddel
+                sem.
+                <br>
+                <br>
+                <b>Bébiétel </b>
+                <br>
+                Most, hogy már tudod, hogy mi az a hozzátáplálás, mi az a hozzátáplálási táblázat, mire kell odafigyelni
+                a hozzátáplálásnál, adódik a kérdés, hogy mit ehet a baba.
+                <br>
+                A hozzátáplálás során ki-ki a maga lehetőségeihez és elképzeléseihez mérten dönt arról, hogy a babának
+                az ételeket saját maga készíti el, vagy éppen megveszi a kész bébiételt. Mindkét iránynak megvan a maga
+                előnye és a hátránya. A szülők is jellemzően két táborba rendeződnek. Anélkül, hogy helyetted döntenénk,
+                objektíven szeretnénk bemutatni, hogy milyen előnyei-hátrányai vannak az otthoni főzésnek és a bolti
+                kész bébiételeknek.
+                <br>
+                <br>
+                <b>Kész bébiételek </b>
+                <br>
+                Az elmúlt évek, évtizedek során rengeteget változott a kész bébiételek piaca. Ma már nagyon sok gyártó,
+                nagyon sokféle terméke elérhető. Nem állja meg a helyét az az állítás, hogy a bolti bébiételek nem
+                egészségesek. Ha alaposan szemügyre veszed a boltok kínálatát és megnézed az összetevőket, biztosan
+                fogsz találni olyan üveges bébiételeket, amelyek tökéletesen megfelelnek a baba aktuális igényeinek.
+                <br>
+                <br>
+                <br>Az üveges bébiételek előnyei:
+                <br>
+
+                Talán a legmeghatározóbb választási szempont azoknál, akik az üveges bébiételek mellett teszik le a
+                voksukat, hogy a bevásárláson és a melegítésen kívül nem igényel plusz munkát az „elkészítése”. Ha
+                váratlan helyzet adódik, csak elő kell venni a szekrényből, picit megmelegíteni és már adható is a
+                babának.
+                <br>Utazások, kirándulások vagy csak egy hosszabb séta, vásárlási körút alkalmával ideális, hiszen
+                minimális
+                erőfeszítést igényel a bébiétel előkészítése.
+                <br>
+                Könnyebb helyzetben vannak azok a szülők, akik tavasszal vagy nyáron kezdik el a hozzátáplálást, hiszen
+                ekkor rengeteg friss, szezonális zöldség és gyümölcs közül lehet válogatni. Az őszi és a téli időszakban
+                csak kevés féle friss zöldség és gyümölcs közül lehet válogatni. Így ha nem gondoltál előre és
+                fagyasztottál le ezekből tavasszal/nyáron, akkor bizony az otthoni főzéshez csak egy szűkebb
+                alapanyag-választék áll rendelkezésre. Ilyenkor jól jöhetnek a bébiételek, amelyek akár olyan
+                alapanyagokból készülnek, amiket te nem tudnál frissen beszerezni.
+                <br>
+                <br>
+                <b>TIPP:</b> Ha előre tudod, hogy a hozzátáplálást valamikor az őszi vagy a téli hónapokban kell
+                elkezdened,
+                akkor érdemes tavasszal és nyáron beraktározni a friss zöldségekből, gyümölcsökből. Kis adagokban
+                előkészítve lefagyaszthatod, így amikor aktuális lesz, már csak elő kell venned a hűtőszekrényből.
+                <br>
+
+
+                <br>Persze a bébiételeknek is megvan a maga hátránya, amivel számolni kell:
+                Amikor már egy anyatejes étkezést kiváltva nagyobb mennyiségeket eszik a baba, hirtelen elkezdenek
+                felhalmozódni a bébiételes üvegek. Ez pedig napról napra rengeteg hulladékot jelent, kivéve persze, ha
+                szelektíven gyűjtöd vagy valamiképpen újrahasznosítod az üveget.
+                <br>
+                <br>
+                <b>TIPP:</b> Ha a kész bébiételek mellett teszed le a voksodat, gyűjtsd szelektíven a bébiételek üvegeit
+                vagy
+                még otthon próbáld újrahasznosítani azokat. Az üvegről a papírt leoldva akár gyertyatartónak is ideális,
+                vagy gyűjthetsz benne apróbb dolgokat például gombokat, gumigyűrűket stb. De még virágot is ültethetsz
+                bele.
+                <br>
+                A bébiételek árát figyelembe véve, amikor már sikerül kiváltani az étkezéseket, és étkezésenként 1 üveg
+                el is fogy, ez hosszú távon általában többe kerül, mintha otthon főznél.
+                Bár egyre többféle ízből lehet választani és nagyon széles a polcok kínálata, mégis értelemszerűen
+                sokkal kevesebb variációt nyújt, mint amit te magad el tudsz készíteni.
+                <br>
+                <br>
+                <b>TIPP:</b> A boltokban kapható bébiételek között is van különbség. Mivel a cukorfogyasztás a babák
+                számára
+                nem ajánlott, ezért érdemes megnézni a bébiétel összetevőit és olyat választani, ami nem tartalmaz
+                hozzáadott cukrot.
+                <br>
+
+                <br>
+                <b>Bébiételek saját kezűleg</b>
+                <br>
+                <br>Ha valaki nem szeretne a bolti kínálatból választani a babának, akkor marad az otthoni főzés. Sok
+                szülőnek ez lelkileg jót tesz, egyfajta gondoskodásként élik meg az otthoni főzést. Minden megfőzhető,
+                elkészíthető otthon különösebb eszközök nélkül is, de a gyártók ezen a területen is igyekeznek
+                segítséget nyújtani a szülőknek. Ha úgy döntesz, hogy saját kezűleg készítenéd el a babának a
+                bébiételeket, akkor egy bébiételkészítő gép biztosan nagy segítségedre lesz. Persze enélkül sem leszel
+                elveszve.
+                <br>
+                <br>Ezek a bébiételkészítő gépek felgyorsítják a konyhai munkát, ami nagyon jól jön amikor kialvatlanul,
+                két
+                szoptatás és pelenkacsere között azt sem tudod, hol áll a fejed. Ezek a konyhai kisgépek általában
+                pároló és turmixoló funkcióval is rendelkeznek. Neked csak annyi a dolgod, hogy megmosod, megpucolod,
+                letisztítod és feldarabold az alapanyagokat. Majd ezeket beleteszed a párolórészbe és már készül is a
+                bébiétel. A párolás befejezése után, ha szükséges, ugyanazzal a géppel akár le is turmixolhatod az
+                ételt. Léteznek olyan bébiételkészítő gépek, ahol a párolás és a turmixolás ugyanabban az edényben
+                történik, így még az átöntögetéssel sem kell bajlódnod.
+                <br>
+
+
+                <br>Most, hogy láttad, mi fán terem az otthoni főzés, vegyük át, hogy milyen előnyei vannak:
+                <br>
+
+                <br>Abszolút a baba ízlése és igényei szerint állíthatod össze a baba étrendjét. Olyan alapanyagokat
+                variálsz, olyan ételeket készítesz, amilyet csak szeretnél. A variációk száma gyakorlatilag végtelen,
+                csak a saját képzeleted szabhat határt.
+                Akár kis mennyiségben is elkészíthető a bébiétel készítő gépben párolt bébiétel.
+                Az otthon készült bébiételnél frissebbet nem tudsz máshogy adni a babádnak.
+                A bébiétel készítő gépeknek köszönhetően minimalizálható a főzéshez szükséges idő, energia és a
+                mosogatnivaló mennyisége.
+                Ugyanakkor az otthoni bébiétel-készítésnek is megvannak a maga hátrányai:
+                <br>
+                Hacsak nem készíted el előre a bébiételeket, minden egyes étkezés előtt a főzéssel is kell
+                foglalatoskodni. A napirendbe ez nem biztos, hogy mindig kényelmesen belefér.
+                Bár a bébiétel készítő gép sokat segít, hiszen gyakorlatilag helyetted megpárolja az alapanyagokat, de
+                az előkészítés attól még rád marad. Időt és energiát kell rászánni az otthoni főzéshez.
+                A bébiételkészítő gépek ára bár hosszú távon megtérül, de nem biztos, hogy mindenki megengedheti magának
+                ezt az egyszeri nagyobb beruházást. Ha több gyermeked van, akkor egymást követően jobban ki tudod
+                használni a gép funkcióit, vagy akár, amikor nektek már nincs rá szükségetek, kölcsön is adhatod
+                családtagjaidnak, közeli barátaidnak, így még nagyobb lesz a gép kihasználtsága.
+                <br>
+                <br>
+                <b>BLW, avagy igény szerinti hozzátáplálás</b>
+                <br>
+                Eddig végig a hozzátáplálás hagyományos irányzatáról volt szó. Mit is jelent ez? A baba hozzátáplálása
+                során a babát fokozatosan ismerteted meg az új ízekkel és az állagokkal. Állagok! Álljunk is meg ennél a
+                szónál, ugyanis létezik a hozzátáplálásnak egy viszonylag új irányzata, aminek egyre több követője van.
+
+                <br>Ez az irányzat a BLW nevet viseli, ami az angol Baby-Led Weaning kifejezés rövidítése. Hogy miért
+                emeltük ki az imént az állag szót? Azért, mert amíg a hagyományos hozzátáplálás során a baba először
+                csak teljesen pépes állagú bébiételt kap, és fokozatosan csempészed bele a darabosabb ételeket, így
+                rávezetve őt a rágásra, addig a BLW egy egészen más utat követ.
+                <br>
+
+                <br>A BLW, vagy az idehaza gyakran falatkás hozzátáplálásnak nevezett megoldás lényege, hogy a
+                hozzátáplálás
+                ritmusát a baba irányítja. Nagyon lesarkítva: a babát a szülő nem eteti, hanem a baba maga eszik, saját
+                kézzel. Nincs tehát kanálhasználat, nincsenek külön a baba számára készített pürék. A baba azt eszi,
+                amit a szülők is. Természetesen azzal a kikötéssel, hogy az étel biztonságos legyen a babának,
+                passzoljon az életkorához. Vagyis nem arról van szó, hogy ha a családi ebéd alkalmával egy jó fűszeres
+                körömpörkölt kerül az asztalra, akkor azt kapja a baba is. Hanem arról, hogy olyan étel kerül az
+                asztalra, ami az egész családnak megfelelő, a babának ugyanúgy, mint a felnőtteknek. A baba dönti el,
+                hogy szeretne-e enni, ha igen, akkor a felkínált lehetőségek közül mit és mennyit. Mivel a pici a saját
+                kezével eszik (a falatka méretű egységekből), ezért olyan formában kell megkapnia az ételt, ahogy azt
+                fel tudja venni a kezével. Ez esetben jobban oda kell figyelned, hogy elkerüld az esetleges
+                félrenyelést, de egyben az is az előnye lehet, hogy a baba hamarabb megtanul önállóan enni. Fontos, hogy
+                nem minden babánál válik be ez a táplálási mód, vagy nem ugyanabban az életkorban, ezért ezt is
+                egyénileg célszerű kitapasztalni.
+                <br>
+                <br>
+                <b>TIPP:</b> Ha gondolkodsz abban, hogy a hozzátáplálásban a BLW módszereit követnéd, előtte
+                mindenképpen
+                keress fel egy BLW szakembert (például egy ebben jártas dietetikust), és kérd ki a védőnőd véleményét
+                is!
+                <br>
+
+            </div>
+
+            <div class="row" id="hasznosinfok">
+
+            </div>
+
+        </div>
+    </section>
+
+
+
+
+</body>
+
+
+
+
+</html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EgeszsegMentor</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <script src="bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="/frontend/html/bootstrap.css">
+    <link rel="stylesheet" href="/frontend/html/stilus.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        body {
+            background-image: url('/images/dark.jpg');
+            background-size: cover;
+            background-repeat: repeat;
+            background-position: center;
+            position: relative;
+        }
+
+
+    </style>
+</head>
+
+<body id="page-top">
+
+    <!-- Navigációs panel -->
+    <nav class="navbar navbar-expand-lg bg-dark text-uppercase fixed-top" id="kaloriaNav">
+        <div class="container">
+            <a class="navbar-brand js-scroll-trigger sajat" href="#page-top">Kalóriabázis</a>
+            <a href="../html/home.html" class="btn btn-dark btn-lg " role="button"><i class="fas fa-home"></i> </a>
+
+        </div>
+    </nav>
+
+    <section class="page-section bg-primary text-white mb-0" id="kcal">
+
+        <div class="container m-5">
+
+
+            <form id="create-kaloriabazis" class="mt-2 mb-2">
+                <label>
+                    Élelmiszer (100 grammra):
+                    <input type="text" name="neve" class="form-control">
+                </label>
+
+                <label>
+                    Energia (kcal):
+                    <input type="number" name="energia" class="form-control">
+                </label>
+
+                <label>
+                    Fehérje (g):
+                    <input type="number" name="feherje" class="form-control">
+                </label>
+
+                <label>
+                    Zsír (g)<img src="" alt="" srcset="">:
+                    <input type="number" name="zsir" class="form-control">
+                </label>
+
+                <label>
+                    Szénhidrát (g):
+                    <input type="number" name="szenhidrat" class="form-control">
+                </label>
+
+                <button type="submit" class="btn btn-outline-light btn-sm mb-1"><i
+                        class="fa-solid fa-plus fa-bounce fa-xs"></i> Új élelmiszer hozzáadása</button>
+
+            </form>
+            <button id="fetch-kaloriabazis" class="btn btn-outline-light">Kalóriabázis lekérdezése és keresés</button>
+
+            <div id="kaloria-list" class="row">
+            </div>
+        </div>
+    </section>
+
+
+    <script>
+        const myFunction = () => {
+            const trs = document.querySelectorAll('#myTable tr:not(.header)')
+            const filter = document.querySelector('#myInput').value
+            const regex = new RegExp(filter, 'i')
+            const isFoundInTds = td => regex.test(td.innerHTML)
+            const isFound = childrenArr => childrenArr.some(isFoundInTds)
+            const setTrStyleDisplay = ({ style, children }) => {
+                style.display = isFound([
+                    ...children // <-- All columns
+                ]) ? '' : 'none'
+            }
+
+            trs.forEach(setTrStyleDisplay)
+        }
+
+    </script>
+
+<!-- Modal -->
+    <div class="modal fade" id="updateKaloriabazisModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="staticBackdropLabel">Étel szerkesztése</h1>
+            </div>
+            <div class="modal-body">
+                <form action="" id="updateKaloriabazisModal">
+                    <div class="form-group">
+                        <label for="kaloriabazisNeve">Élelmiszer megnevezése (100 grammra)</label>
+                        <input type="text" class="form-control" id="kaloriabazisNeve" name="name">
+                        
+                        <label for="kaloriabazisEnergia">Energia(kcal)</label>
+                        <input type="number" class="form-control" id="kaloriabazisEnergia" name="energia">
+                        
+                        <label for="kaloriabazisFeherje">Fehérje(g)</label>
+                        <input type="number" class="form-control" id="kaloriabazisFeherje" name="feherje">
+
+                        <label for="kaloriabazisZsir">Zsír(g)</label>
+                        <input type="number" class="form-control" id="kaloriabazisZsir" name="zsir">
+
+                        <label for="kaloriabazisSzenhidrat">Szénhidrát(g)</label>
+                        <input type="number" class="form-control" id="kaloriabazisSzenhidrat" name="szenhidrat">
+
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" onclick="closeModal()"><i class="fa-solid fa-xmark"></i></button>
+                <button type="button" class="btn btn-success" onclick="updateKaloriabazisData()"><i class="fa-solid fa-check"></i></button>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <script src="/frontend/js/script.js"></script>
+
+</body>
+
+
+
+</html>

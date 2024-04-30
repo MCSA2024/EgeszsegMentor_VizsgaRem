@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EgeszsegMentor</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <script src="bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="/frontend/html/bootstrap.css">
+    <link rel="stylesheet" href="/frontend/html/stilus.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        body {
+            background-image: url('/images/dark.jpg');
+            background-size: cover;
+            background-repeat: repeat;
+            background-position: center;
+            position: relative;
+        }
+
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            margin-right: -1.5rem;
+            margin-left: -1.5rem;
+        }
+
+
+        .container {
+            position: relative;
+            max-width: 80%;
+            max-height: 80%;
+
+        }
+
+        .image {
+            display: block;
+            max-width: 100%;
+
+            height: auto;
+        }
+
+        .modal-content {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            pointer-events: auto;
+            background-color: #bba98f;
+            background-clip: padding-box;
+            border: 0 solid rgba(0, 0, 0, 0.2);
+            border-radius: 0.75rem;
+            outline: 0;
+        }
+        
+    </style>
+</head>
+
+<body id="page-top">
+
+    <!-- Navigációs panel -->
+    <nav class="navbar navbar-expand-lg bg-dark text-uppercase fixed-top" id="mindenmentes">
+        <div class="container">
+            <a class="navbar-brand js-scroll-trigger sajat" href="#page-top">Receptek</a>
+            <a href="../html/home.html" class="btn btn-dark btn-lg " role="button"><i class="fas fa-home"></i> </a>
+
+        </div>
+    </nav>
+
+    <section class="page-section bg-dark text-white mb-0" id="receptek">
+        <div class="container">
+
+
+            <div class="container d-flex align-items-center flex-column">
+                <h1 class="masthead-heading text-uppercase mb-5">Mindenmentes receptjeink</h1>
+
+                <div class="col-10">
+                    <img src="/images/r_brownie.jpg"
+                        style="border:5px outset rgba(27, 20, 20, 0.562); max-width:20%;max-height:20%">
+                    <!-- Button to Open the Modal -->
+                    <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#recept1">
+
+                        BROWNIE MANDULALISZTTEL
+                    </button>
+
+                    <!-- The Modal -->
+                    <div class="modal fade" id="recept1">
+                        <div class="modal-dialog modal-xl">
+                            <div class="modal-content">
+
+                                <!-- Modal Header -->
+                                <div class="modal-header">
+                                    <h4 class="modal-title"><b>Recept leírása</b><br>
+                                        A mandulalisztnek karakteres íze van, amire rásegíthetsz mandulaszeletekkel, így
+                                        igazán különleges kulináris élményben lesz részetek! Tálalhatod friss vagy
+                                        fagyasztott gyümölcsökkel, vaníliafagyival.</h4>
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                </div>
+
+                                <!-- Modal body -->
+                                <div class="modal-body">
+                                    <b>Hozzávalók</b><br>
+                                    <br>
+                                    20dkg étcsokoládé<br>
+                                    5dkg kókuszzsír<br>
+                                    4ek nádcukor<br>
+                                    3db tojás<br>
+                                    18dkg mandulaliszt<br>
+                                    0.5csom sütőpor<br>
+                                    Elkészítés lépései<br>
+                                    <br>
+                                    Az étcsokoládét felolvasztjuk a kókuszzsírral. A cukrot és a tojást kissé felverjük
+                                    (nem kell
+                                    teljesen habosra), és hozzákeverjük a lisztet és a sütőport. Ezután hozzáadjuk az
+                                    olvasztott
+                                    csokoládét, és egyneművé keverjük.<br>
+                                    Egy kisebb tepsit kikenjük kókuszzsírral, és belesimítjuk a masszát. 180 fokon kb.
+                                    25-30 perc
+                                    alatt készre sütjük.<br>
+                                </div>
+
+                                <!-- Modal footer -->
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-10">
+                    <img src="/images/r_muffin.jpg"
+                        style="border:5px outset rgba(27, 20, 20, 0.562); max-width:20%;max-height:20%">
+                    <!-- Button to Open the Modal -->
+                    <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#recept2">
+
+                        PALEO ALMÁS MUFFIN
+                    </button>
+
+                    <!-- The Modal -->
+                    <div class="modal fade" id="recept2">
+                        <div class="modal-dialog modal-xl">
+                            <div class="modal-content">
+
+                                <!-- Modal Header -->
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                </div>
+
+                                <!-- Modal body -->
+                                <div class="modal-body">
+                                    <b>Hozzávalók</b><br>
+                                    <br>
+                                    6dkg kókuszliszt<br>
+                                    0.8dkg sütőpor<br>
+                                    1tk fahéj<br>
+                                    40dkg alma<br>
+                                    4db tojás<br>
+                                    6dkg eritrit<br>
+                                    csipet só<br>
+                                    Elkészítés lépései<br>
+                                    <br>
+                                    A kókuszlisztet, a sütőport és a fahéjat összekeverjük. Az almát lereszeljük. A
+                                    tojásokat
+                                    szétválasztjuk, a tojássárgáját elkeverjük 4 dkg eritrittel.<br>
+                                    A fehérjét egy csipetnyi sóval és a maradék eritrittel kemény habbá verjük, majd
+                                    óvatosan,
+                                    egyenként hozzákeverjük az eritrites tojássárgáját, a sütőporral összekevert
+                                    lisztet, végül a
+                                    reszelt almát.<br>
+                                    Muffin formákba kanalazzuk a masszát (nem kell nyomkodni, magától szét fog terülni),
+                                    majd 160
+                                    fokra előmelegített, légkeveréses sütőben kb. 20 perc alatt megsütjük.<br>
+                                </div>
+
+                                <!-- Modal footer -->
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-10">
+                    <img src="/images/r_malnafagyi.jpg"
+                        style="border:5px outset rgba(27, 20, 20, 0.562); max-width:20%;max-height:20%">
+                    <!-- Button to Open the Modal -->
+                    <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#recept3">
+
+                        MÁLNAFAGYI ROPOGÓS ZABPEHELLYEL
+                    </button>
+
+                    <!-- The Modal -->
+                    <div class="modal fade" id="recept3">
+                        <div class="modal-dialog modal-xl">
+                            <div class="modal-content">
+
+                                <!-- Modal Header -->
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                </div>
+
+                                <!-- Modal body -->
+                                <div class="modal-body">
+                                    <b>Hozzávalók</b><br>
+                                    <br>
+                                    1db banán<br>
+                                    1marék málna<br>
+                                    2marék zabpehely<br>
+                                    1ek méz<br>
+                                    1tk vaj<br>
+                                    Elkészítés lépései<br>
+                                    A banánt előző nap feldaraboljuk, zacskóba rakjuk és egy éjszakára betesszük a
+                                    fagyasztóba.
+                                    Másnap kivesszük, és pár percig (kb. 4-5perc) állni hagyjuk, majd turmixgépbe
+                                    tesszük és
+                                    hozzáadjuk a málnát (néhány szem málnát félreteszünk a díszítéshez). Alaposan
+                                    összeturmixoljuk,
+                                    majd poharakba töltjük. Azonnal is lehet fogyasztani, de visszatehetjük egy kicsit a
+                                    fagyasztóba.<br>
+                                    A mézet és a vajat felmelegítjük, majd hozzákeverjük a zabpelyhet. Sütőpapírral
+                                    bélelt tepsibe
+                                    tesszük, és 170 fokon kb.15 perc alatt aranyszínűre sütjük. Hagyjuk teljesen
+                                    kihűlni, így lesz
+                                    ropogós. <br>
+                                    Tálaláskor a tetejét megszórjuk a zabpehellyel, majd a málnával.<br>
+                                </div>
+
+                                <!-- Modal footer -->
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-10">
+                    <img src="/images/tesztasali.jpg"
+                        style="border:5px outset rgba(27, 20, 20, 0.562); max-width:20%;max-height:20%">
+                    <!-- Button to Open the Modal -->
+                    <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#recept4">
+
+                        TÉSZTASALÁTA
+                    </button>
+
+                    <!-- The Modal -->
+                    <div class="modal fade" id="recept4">
+                        <div class="modal-dialog modal-xl">
+                            <div class="modal-content">
+
+                                <!-- Modal Header -->
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                </div>
+
+                                <!-- Modal body -->
+                                <div class="modal-body">
+                                    <b>Hozzávalók</b><br>
+                                    <br>
+                                    5dkg orsótészta<br>
+                                    20dkg bacon<br>
+                                    5szál újhagyma<br>
+                                    15dkg házi paleo majonéz<br>
+                                    Elkészítés lépései<br>
+                                    <br>
+                                    A paleós tésztasalátához a szezámlisztes tésztát a csomagoláson feltüntetett utasítás szerint lobogó, sós vízben kifőzzük.<br>
+                                    Egy serpenyőben a felcsíkozott bacont lepirítjuk, a kisült zsírt a tésztával összekeverjük, így nincs szükségünk olajra, hogy a tészta ne ragadjon össze.<br>
+                                    Amíg a tészta és a bacon hűl, elkészítjük a házi majonézt, az újhagymát felkarikázzuk és belekeverjük.<br>
+                                    Ezután minden hozzávalót a tésztára teszünk, és szépen beleforgatjuk.<br>
+                                    Az elkészült salátát zöldfűszerekkel díszíthetjük. Hidegen salátaként, melegen akár főételként is megállja a helyét.<br>
+                                </div>
+
+                                <!-- Modal footer -->
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" id="mindenmentes">
+
+                </div>
+
+            </div>
+    </section>
+
+
+
+
+
+
+
+
+
+</body>
+
+
+
+</html>
